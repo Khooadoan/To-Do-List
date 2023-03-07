@@ -1,11 +1,13 @@
-const newTaskInput = document.getElementById("newtask");
+const newTaskInput = document.getElementById("newtask"); 
 const arr = [];
 const restoredArr = JSON.parse(localStorage.getItem("tasks"));
 
-for (let i = 0; i < restoredArr.length; i++) {
+// Restores the tasks saved in localStorage
+for (let i = 0; i < restoredArr.length; i++) { 
     addTask(restoredArr[i]);
 }
 
+// If Enter key is pressed, it will triggers the "submit" button
 newTaskInput.addEventListener("keypress", function(event) {
     if(event.key == "Enter") {
         event.preventDefault();
@@ -13,6 +15,7 @@ newTaskInput.addEventListener("keypress", function(event) {
     }
 })
 
+// Adds a new task and saves it to the localStorage
 function addTask(task) {
     const newTask = document.createElement("li");
     const taskList = document.getElementById("tasks");
