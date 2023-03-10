@@ -1,6 +1,6 @@
 const newTaskInput = document.getElementById("newtask"); 
 const arr = [];
-const restoredArr = JSON.parse(localStorage.getItem("tasks"));
+const restoredArr = (JSON.parse(localStorage.getItem("tasks")) || []);
 
 // Restores the tasks saved in localStorage
 for (let i = 0; i < restoredArr.length; i++) { 
