@@ -10,8 +10,10 @@ for (let i = 0; i < restoredArr.length; i++) {
 // If Enter key is pressed, it will triggers the "submit" button
 newTaskInput.addEventListener("keypress", function(event) {
     if(event.key == "Enter") {
+        if(newTaskInput.value) {
         event.preventDefault();
         document.getElementById("submit").click();
+        }
     }
 })
 
